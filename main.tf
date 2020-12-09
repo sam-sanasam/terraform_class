@@ -27,24 +27,25 @@ resource "aws_security_group" "first_group" {
   ingress {
     #cidr_blocks = [ "value" ]
     #description = "value"
-    from_port = 22
-    #ipv6_cidr_blocks = [ "value" ]
-    #prefix_list_ids = [ "value" ]
-    protocol = "6"
-    #security_groups = [ "value" ]
-    #self = false
-    to_port = 22
-  }
-  egress  {
-    #cidr_blocks = [ "value" ]
-    #description = "value"
-    from_port = 1
+    from_port = 0
     #ipv6_cidr_blocks = [ "value" ]
     #prefix_list_ids = [ "value" ]
     protocol = "tcp"
     #security_groups = [ "value" ]
     #self = false
-    to_port = 1
+    to_port = 22
+    cidr_blocks=["0.0.0.0/0"]
+  }
+  egress  {
+    #cidr_blocks = [ "value" ]
+    #description = "value"
+    from_port = 0
+    #ipv6_cidr_blocks = [ "value" ]exit
+    #prefix_list_ids = [ "value" ]
+    protocol = "-1"
+    #security_groups = [ "value" ]
+    #self = false
+    to_port = 0
     cidr_blocks=["0.0.0.0/0"]
   } 
 }
