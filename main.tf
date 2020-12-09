@@ -23,28 +23,15 @@ resource "aws_eip" "my_eip" {
 
 resource "aws_security_group" "first_group" {
   name = "first_group"
- # vpc_id = aws_instance.myvm1
   ingress {
-    #cidr_blocks = [ "value" ]
-    #description = "value"
     from_port = 0
-    #ipv6_cidr_blocks = [ "value" ]
-    #prefix_list_ids = [ "value" ]
     protocol = "tcp"
-    #security_groups = [ "value" ]
-    #self = false
     to_port = 22
     cidr_blocks=["0.0.0.0/0"]
   }
   egress  {
-    #cidr_blocks = [ "value" ]
-    #description = "value"
     from_port = 0
-    #ipv6_cidr_blocks = [ "value" ]exit
-    #prefix_list_ids = [ "value" ]
     protocol = "-1"
-    #security_groups = [ "value" ]
-    #self = false
     to_port = 0
     cidr_blocks=["0.0.0.0/0"]
   } 
